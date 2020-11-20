@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="DnDHelper.CommonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DnDHelper"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="680">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="321*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="82,20,120,225" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Initiative: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+            <TextBlock Text="Strength: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+            <TextBlock Text="Dexterity: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+            <TextBlock Text="Constitution: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
+            <TextBlock Text="Intelligence: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0"/>
+            <TextBlock Text="Wisdom: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0"/>
+            <TextBlock Text="Charisma: " Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0"/>
+
+            <TextBox Name="InitiativeTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="0" Grid.Column="1" TextChanged="InitiativeTxt_TextChanged"/>
+            <TextBox Name="StrengthTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="1" Grid.Column="1" TextChanged="StrengthTxt_TextChanged"/>
+            <TextBox Name="DexterityTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="2" Grid.Column="1" TextChanged="DexterityTxt_TextChanged"/>
+            <TextBox Name="ConsitutionTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="3" Grid.Column="1" TextChanged="ConsitutionTxt_TextChanged"/>
+            <TextBox Name="IntelligenceTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="4" Grid.Column="1" TextChanged="IntelligenceTxt_TextChanged"/>
+            <TextBox Name="WisdomTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="5" Grid.Column="1" TextChanged="WisdomTxt_TextChanged"/>
+            <TextBox Name="CharismaTxt" Margin="0" Background="Transparent" Foreground="LightGray" FontSize="18" Grid.Row="6" Grid.Column="1" TextChanged="CharismaTxt_TextChanged"/>
+
+            <Button Name="InitiativeBtn" Content="Roll Initative" Grid.Row="0" Grid.Column="2" IsEnabled="False" Click="InitiativeBtn_Click"/>
+            <Button Name="StrengthBtn" Content="Strength Check" Grid.Row="1" Grid.Column="2" IsEnabled="False" Click="StrengthBtn_Click"/>
+            <Button Name="DexterityBtn" Content="Dexterity Check" Grid.Row="2" Grid.Column="2" IsEnabled="False" Click="DexterityBtn_Click"/>
+            <Button Name="ConsitutionBtn" Content="Constitution Check" Grid.Row="3" Grid.Column="2" IsEnabled="False" Click="ConsitutionBtn_Click"/>
+            <Button Name="IntelligenceBtn" Content="Intelligence Check" Grid.Row="4" Grid.Column="2" IsEnabled="False" Click="IntelligenceBtn_Click"/>
+            <Button Name="WisdomBtn" Content="Wisdom Check" Grid.Row="5" Grid.Column="2" IsEnabled="False" Click="WisdomBtn_Click"/>
+            <Button Name="CharismaBtn" Content="Charisma Check" Grid.Row="6" Grid.Column="2" IsEnabled="False" Click="CharismaBtn_Click"/>
+        </Grid>
+
+        <Border x:Name="ResultsLbl" Margin="62,320,100,50" CornerRadius="10" Grid.Column="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                    <GradientStop Color="LightGray" Offset="0"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock x:Name="ResultTxt" Text="0" Margin="0 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+        </Border>
+    </Grid>
+</UserControl>
